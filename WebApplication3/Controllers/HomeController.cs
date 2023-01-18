@@ -44,13 +44,13 @@ namespace VehicleDet.Controllers
       
             return View(vehicles);
         }
-
+        [Authorize (Roles ="Admin")]
         public ActionResult CarAdd()
         {
 
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CarAdd(Vehiclemodel model)
@@ -69,6 +69,7 @@ namespace VehicleDet.Controllers
             }
             return View();
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult CarDelete(int Id)
         {
@@ -89,7 +90,7 @@ namespace VehicleDet.Controllers
             }
             return View(vehicles);
         }
-
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult CarDelete(int Id, Vehiclemodel model)
         {
@@ -100,6 +101,7 @@ namespace VehicleDet.Controllers
                 return RedirectToAction("ViewVehicles");
 
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult CarUpdate(int Id)
         {
@@ -120,7 +122,7 @@ namespace VehicleDet.Controllers
             }
             return View(vehicles);
         }
-
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult CarUpdate(int Id, Vehiclemodel model)
         {
@@ -141,7 +143,7 @@ namespace VehicleDet.Controllers
             return RedirectToAction("ViewVehicles");
 
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult DeletedView()
         {
@@ -167,6 +169,7 @@ namespace VehicleDet.Controllers
 
             return View(vehicles);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult CarRecover(int Id)
         {
@@ -187,7 +190,7 @@ namespace VehicleDet.Controllers
             }
             return View(vehicles);
         }
-
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult CarRecover(int Id, Vehiclemodel model)
         {
