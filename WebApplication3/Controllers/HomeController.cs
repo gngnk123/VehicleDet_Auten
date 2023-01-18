@@ -9,6 +9,7 @@ using static DataLibrary.BusinessLogic.VehicleProcessor;
 
 namespace VehicleDet.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
